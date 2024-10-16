@@ -2,11 +2,13 @@
 
 source "./_utils.sh"
 
+POD_REP='n'
+QUICKPATH_DOC="$HOME/.dockeroot"
+
 clear
 print_color $YELLOW "Installation require to reboot, proceed (y/n) "
 read -n1 -rep "" PRCD
 
-POD_REP='n'
 if package_exist "podman"; then
     print_color $CYAN "Podman exist in the system, replace? (y/n)"
     read -n1 -rep '' POD_REP
@@ -16,8 +18,6 @@ print_color $CYAN "would you like to change docker root path (y/n) "
 read -n1 -rep '' DCKPTH
 
 if [[ ! "$DCKPTH" =~ [Nn] ]]; then
-    QUICKPATH_DOC="$HOME/Datacenter/Docker/.dockeroot"
-
     print_color $GREEN "Quick path: "
     print_color $WHITE "$QUICKPATH_DOC"
     echo -e

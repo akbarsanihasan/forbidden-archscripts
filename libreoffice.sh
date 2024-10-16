@@ -7,7 +7,7 @@ sleep 2
 
 install libreoffice-still ttf-ms-win11-auto
 
-cp -R ./_config/libreoffice $HOME/.config/
+cp -R ./.config/libreoffice $HOME/.config/
 
 clear
 print_color $GREEN "Libreoffice-still installed\n"

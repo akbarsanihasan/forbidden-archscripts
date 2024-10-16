@@ -27,7 +27,7 @@ print_color $CYAN "would you like to change qemu storage path (y/n) "
 read -n1 -rep '' QMPTH
 
 if [[ ! "$QMPTH" =~ [Nn] ]]; then
-    QUICKPATH_QM="$HOME/Datacenter/VMStorage"
+    QUICKPATH_QM="$HOME/VMStorage"
 
     print_color $GREEN "Quick path: "
     print_color $WHITE "$QUICKPATH_QM"

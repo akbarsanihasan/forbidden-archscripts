@@ -49,3 +49,15 @@ function package_exist() {
         return 1
     fi
 }
+
+if ! package_exist "$AURH"; then
+    rm -rf $HOME/$AURH
+
+    git clone https://aur.archlinux.org/$AURH.git $HOME/$AURH
+
+    cd $HOME/$AURH
+    makepkg -si --noconfirm
+
+    cd $CURRENT_DIRECTORY
+    rm -rf $HOME/$AURH
+fi
